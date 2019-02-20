@@ -1,0 +1,17 @@
+# 
+# Rotate the SpinCoins debug.log file(s)
+#
+
+compress
+compresscmd /bin/bzip2
+compressext .bz2
+compressoptions --best
+copytruncate
+dateext
+dateyesterday
+
+/var/lib/spc/debug.log {
+    daily
+    missingok
+    rotate 28
+}
